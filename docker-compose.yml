@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  n8n:
+    image: n8nio/n8n:1.89.2
+    ports:
+      - "3000:5678"
+    environment:
+      - N8N_HOST=brunoaccorsi.duckdns.org
+      - WEBHOOK_URL=https://brunoaccorsi.duckdns.org
+    volumes:
+      - n8n_data:/home/node/.n8n
+
+volumes:
+  n8n_data:
